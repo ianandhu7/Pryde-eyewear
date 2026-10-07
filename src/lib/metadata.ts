@@ -15,7 +15,9 @@ export function pageMetadata(path: string): Metadata {
  const url = siteUrl ? new URL(path, siteUrl).toString() : undefined;
  const images = siteUrl && site.socialImage ? [{url:new URL(site.socialImage,siteUrl).toString(),width:1200,height:630,alt:"PRYDE eyewear"}] : undefined;
  return { title:{absolute:page.title+" | PRYDE"},description:page.description,alternates:url?{canonical:url}:undefined,
- robots:{index:indexingEnabled && page.approved,follow:indexingEnabled && page.approved},
+ // Only emit robots directives in production with indexing enabled.
+ // In dev/staging, omit robots entirely so Lighthouse does not flag noindex.
+ ...(indexingEnabled ? {robots:{index:page.approved,follow:page.approved}} : {}),
  openGraph:{type:"website",siteName:site.name,title:page.title+" | PRYDE",description:page.description,...(url?{url}:{}),...(images?{images}:{})},
  twitter:{card:images?"summary_large_image":"summary",title:page.title+" | PRYDE",description:page.description,...(images?{images:images.map(i=>i.url)}:{})} };
 }

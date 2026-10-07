@@ -65,6 +65,20 @@
   opacity: 1;
 }
 
+.arrowBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #0a0a0a;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.arrowBtn:hover {
+  transform: translateX(3px);
+}
+
 /* ─── Mobile ─────────────────────────────────────────── */
 @media (max-width: 768px) {
   .header {

@@ -31,7 +31,6 @@ export function ProductCard({ product }: ProductCardProps) {
           fill
           sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className={styles.img}
-          priority={product.order <= 20}
         />
       </div>
 

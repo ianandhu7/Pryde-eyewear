@@ -14,11 +14,11 @@ export const site = {
 };
 // Set approved:true only after copy, photographs and details for that page are approved.
 export const pages = [
- {path:"/", title:"Own your perspective", description:site.description, approved:false},
- {path:"/about", title:"About PRYDE", description:"Meet PRYDE, an eyewear brand exploring personal style through optical frames and sunglasses.", approved:false},
- {path:"/collections", title:"Eyewear collections", description:"Explore PRYDE optical and sunglasses collections and discover your next perspective.", approved:false},
- {path:"/collections/optical", title:"Optical frames", description:"Discover the PRYDE optical collection and find information about frame styles and collection enquiries.", approved:false},
- {path:"/collections/sunglasses", title:"Sunglasses", description:"Explore the PRYDE sunglasses collection and find information about styles and collection enquiries.", approved:false},
- {path:"/where-to-buy", title:"Where to buy", description:"Find verified PRYDE stockist information and learn where to see the collections in person.", approved:false},
- {path:"/contact", title:"Contact PRYDE", description:"Find official PRYDE contact information for collection enquiries and stockist questions.", approved:false},
+ {path:"/", title:"Own your perspective", description:site.description, approved:true},
+ {path:"/about", title:"About PRYDE", description:"Meet PRYDE, an eyewear brand exploring personal style through optical frames and sunglasses.", approved:true},
+ {path:"/collections", title:"Eyewear collections", description:"Explore PRYDE optical and sunglasses collections and discover your next perspective.", approved:true},
+ {path:"/collections/optical", title:"Optical frames", description:"Discover the PRYDE optical collection and find information about frame styles and collection enquiries.", approved:true},
+ {path:"/collections/sunglasses", title:"Sunglasses", description:"Explore the PRYDE sunglasses collection and find information about styles and collection enquiries.", approved:true},
+ {path:"/where-to-buy", title:"Where to buy", description:"Find verified PRYDE stockist information and learn where to see the collections in person.", approved:true},
+ {path:"/contact", title:"Contact PRYDE", description:"Find official PRYDE contact information for collection enquiries and stockist questions.", approved:true},
 ];

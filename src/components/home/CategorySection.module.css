@@ -1,146 +1,120 @@
 .section {
   background: #ffffff;
-  padding: clamp(60px, 8vw, 110px) 4%;
-  border-top: 1px solid rgba(10, 10, 10, 0.08);
+  padding: clamp(60px, 8vw, 100px) 4%;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1380px;
   margin: 0 auto;
 }
 
 .header {
-  margin-bottom: clamp(36px, 5vw, 60px);
-}
-
-.eyebrow {
-  display: block;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: #777777;
-  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: clamp(24px, 4vw, 40px);
 }
 
 .heading {
-  font-family: var(--serif);
-  font-size: clamp(40px, 5.5vw, 76px);
-  font-weight: 300;
+  font-family: var(--serif, "Playfair Display", Georgia, serif);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 400;
   line-height: 1.05;
   color: #0a0a0a;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
+}
+
+.exploreAllLink {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  color: #0a0a0a;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #0a0a0a;
+  transition: opacity 0.25s ease;
+}
+
+.exploreAllLink:hover {
+  opacity: 0.7;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 4vw, 56px);
+  gap: clamp(16px, 3vw, 32px);
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-}
-
-.imageLink {
+  position: relative;
   display: block;
-  width: 100%;
-  overflow: hidden;
-  background: #f5f3ef;
   text-decoration: none;
+  overflow: hidden;
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1.35 / 1;
   overflow: hidden;
+  background-color: #e5e3df;
 }
 
 .img {
   object-fit: cover;
   object-position: center;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.imageLink:hover .img {
+.card:hover .img {
   transform: scale(1.03);
 }
 
-.meta {
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.overlayText {
+  position: absolute;
+  bottom: 28px;
+  left: 32px;
+  z-index: 2;
 }
 
-.cardTitle {
-  font-family: var(--serif);
-  font-size: clamp(32px, 3.5vw, 48px);
+.title {
+  font-family: var(--serif, "Playfair Display", Georgia, serif);
+  font-size: clamp(32px, 4vw, 56px);
   font-weight: 400;
   color: #0a0a0a;
-  margin-bottom: 8px;
-  line-height: 1.1;
-}
-
-.cardSub {
-  font-family: var(--sans);
-  font-size: 15px;
-  color: #555555;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-.link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #0a0a0a;
-  text-decoration: none;
-  border-bottom: 1px solid #0a0a0a;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.4);
   padding-bottom: 4px;
-  transition: opacity 0.25s ease, gap 0.25s ease;
-}
-
-.link:hover {
-  opacity: 0.7;
-  gap: 16px;
-}
-
-.arrow {
   display: inline-block;
-  font-size: 14px;
-  transition: transform 0.2s ease;
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 48px 16px;
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
+
   .grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 24px;
   }
-  .header {
-    margin-bottom: 28px;
-  }
-  .heading {
-    font-size: clamp(28px, 7.5vw, 42px);
-    line-height: 1.15;
-    word-break: break-word;
-  }
+
   .imageWrapper {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1.2 / 1;
+  }
+
+  .overlayText {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .title {
+    font-size: clamp(28px, 6vw, 40px);
   }
 }
-
-
-
-

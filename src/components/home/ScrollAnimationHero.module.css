@@ -1,0 +1,277 @@
+/* ── Hero Container ── */
+.heroContainer {
+  position: relative;
+  width: 100%;
+  background: #faf9f6;
+  /* Warm ivory background */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 60px 4% 60px;
+  /* Reduced vertical free space */
+}
+
+/* ── Centered Content Wrapper ── */
+.contentWrapper {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  /* Tighter gap between text and video */
+}
+
+/* ── Left Text Column ── */
+.textCol {
+  flex: 1;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  z-index: 5;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #555;
+  font-weight: 600;
+}
+
+.heading {
+  font-family: var(--serif, "Playfair Display", Georgia, serif);
+  font-size: clamp(48px, 5.5vw, 84px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #0a0a0a;
+  letter-spacing: -0.02em;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: #444;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+  font-family: var(--sans, system-ui, -apple-system, sans-serif);
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 36px;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  text-transform: uppercase;
+}
+
+.ctaButton:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* ── Right Media Column ── */
+.mediaCol {
+  flex: 1.3;
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 2;
+}
+
+/* ── Video Presentation Wrapper ── */
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  padding: 12px;
+}
+
+/* Subtle lavender glow behind */
+.lavenderGlow {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  right: -20%;
+  bottom: -20%;
+  background: radial-gradient(circle at center, rgba(216, 207, 224, 0.45) 0%, transparent 65%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Fine lavender outline offset */
+.offsetOutline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 24px;
+  bottom: 24px;
+  border: 1px solid #d8cfe0;
+  z-index: 2;
+  pointer-events: none;
+  transform: translate(24px, -24px);
+}
+
+/* Thin ivory frame and restrained shadow */
+.videoContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #ffffff;
+  padding: 8px;
+  /* Thin ivory frame */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  z-index: 3;
+}
+
+.posterImage {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.posterHidden {
+  opacity: 0;
+}
+
+.canvas {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  image-rendering: auto;
+  object-fit: cover;
+}
+
+.canvasVisible {
+  opacity: 1;
+}
+
+/* ── Video Caption ── */
+.videoCaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 24px;
+  padding: 0 12px;
+}
+
+.captionText {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.captionLine {
+  flex: 1;
+  height: 1px;
+  background: #e4e0ec;
+  border: none;
+  margin: 0 24px;
+}
+
+/* ── Play / Pause button ── */
+.playPauseBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 4;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.playPauseBtn:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: scale(1.05);
+}
+
+/* ── Mobile Layout ── */
+@media (max-width: 968px) {
+  .heroContainer {
+    padding: 60px 5% 40px;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+    /* Left align everything */
+  }
+
+  .textCol {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .mediaCol {
+    max-width: 100%;
+  }
+
+  .offsetOutline {
+    transform: translate(12px, -12px);
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .videoCaption {
+    padding: 0;
+    margin-top: 20px;
+    flex-direction: row-reverse;
+    /* Put text on left, line on right */
+    justify-content: flex-start;
+  }
+
+  .captionText:first-child {
+    display: none;
+    /* Hide the first text element on mobile */
+  }
+
+  .captionLine {
+    margin: 0 0 0 16px;
+  }
+
+  .captionText {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+}

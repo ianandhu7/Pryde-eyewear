@@ -33,6 +33,9 @@ export function Header() {
         <nav className={styles.rightNav} aria-label="Right navigation">
           <Link href="/collections" className={styles.navLink}>COLLECTIONS</Link>
           <Link href="/contact" className={styles.navLink}>CONTACT</Link>
+          <Link href="/collections" className={styles.arrowBtn} aria-label="Explore collections">
+            <span aria-hidden="true">→</span>
+          </Link>
         </nav>
 
       </header>

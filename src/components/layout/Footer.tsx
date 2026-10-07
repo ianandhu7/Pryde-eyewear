@@ -21,7 +21,7 @@ export function Footer() {
 
         {/* Col 2 — Navigation */}
         <div className={styles.col}>
-          <h4 className={styles.colTitle}>NAVIGATION</h4>
+          <h3 className={styles.colTitle}>NAVIGATION</h3>
           <ul className={styles.linkList}>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/collections/optical">Optical Frames</Link></li>
@@ -33,7 +33,7 @@ export function Footer() {
 
         {/* Col 3 — Showroom Hours */}
         <div className={styles.col}>
-          <h4 className={styles.colTitle}>SHOWROOM HOURS</h4>
+          <h3 className={styles.colTitle}>SHOWROOM HOURS</h3>
           <ul className={styles.hoursList}>
             <li>
               <span className={styles.day}>Mon – Sat</span>
@@ -48,7 +48,7 @@ export function Footer() {
 
         {/* Col 4 — Store Location */}
         <div className={styles.col}>
-          <h4 className={styles.colTitle}>STORE LOCATION</h4>
+          <h3 className={styles.colTitle}>STORE LOCATION</h3>
           <div className={styles.storeInfo}>
             <p className={styles.storeName}>📍 PRYDE Eyewear</p>
             <p className={styles.storeDetail}>9/9, 59th Cross Rd,</p>
