@@ -5,3 +5,6 @@ node_modules/
 *.tsbuildinfo
 artifacts/
 *.log
+
+.vercel
+.env*.local

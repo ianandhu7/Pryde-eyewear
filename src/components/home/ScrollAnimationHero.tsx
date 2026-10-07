@@ -40,7 +40,6 @@ export function ScrollAnimationHero({
   const isPlayingRef = useRef(true);
 
   const [isReady, setIsReady] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   function getFrameUrl(index: number): string {
@@ -116,13 +115,11 @@ export function ScrollAnimationHero({
     firstImg.onload = () => {
       images[0] = firstImg;
       setIsReady(true);
-      setIsPlaying(true);
       drawFrame(0);
     };
     if (firstImg.complete && firstImg.naturalWidth > 0) {
       images[0] = firstImg;
       setIsReady(true);
-      setIsPlaying(true);
       drawFrame(0);
     }
 
@@ -166,18 +163,6 @@ export function ScrollAnimationHero({
     };
   }, [isReady, prefersReducedMotion, animate, drawFrame]);
 
-  const togglePlay = useCallback(() => {
-    const next = !isPlayingRef.current;
-    isPlayingRef.current = next;
-    setIsPlaying(next);
-    if (next) {
-      lastTimeRef.current = performance.now();
-      rafRef.current = requestAnimationFrame(animate);
-    } else {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    }
-  }, [animate]);
-
   return (
     <section className={styles.heroContainer} aria-label="PRYDE Hero">
       <div className={styles.contentWrapper}>
@@ -216,27 +201,6 @@ export function ScrollAnimationHero({
                   ref={canvasRef}
                   className={`${styles.canvas} ${isReady ? styles.canvasVisible : ""}`}
                 />
-              )}
-              
-              {isReady && !prefersReducedMotion && (
-                <button
-                  type="button"
-                  className={styles.playPauseBtn}
-                  onClick={togglePlay}
-                  aria-label={isPlaying ? "Pause animation" : "Play animation"}
-                  title={isPlaying ? "Pause animation" : "Play animation"}
-                >
-                  {isPlaying ? (
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-                      <rect x="1.5" y="1.5" width="3.5" height="11" rx="1" />
-                      <rect x="9" y="1.5" width="3.5" height="11" rx="1" />
-                    </svg>
-                  ) : (
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-                      <polygon points="2.5,1.5 12.5,7 2.5,12.5" />
-                    </svg>
-                  )}
-                </button>
               )}
             </div>
           </div>

@@ -287,18 +287,6 @@ export function Hero() {
           ›
         </button>
 
-        {/* Play / Pause control for the frame animation */}
-        {!reducedMotion && (
-          <button
-            type="button"
-            className={styles.playPauseBtn}
-            onClick={() => setIsPlaying((p) => !p)}
-            aria-label={isPlaying ? "Pause animation" : "Play animation"}
-            aria-pressed={!isPlaying}
-          >
-            {isPlaying ? "⏸" : "▶"}
-          </button>
-        )}
 
         {/* Desktop-only Pagination Dots — unchanged */}
         <div

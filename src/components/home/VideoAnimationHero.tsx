@@ -79,24 +79,7 @@ export function VideoAnimationHero() {
         </Link>
       </div>
 
-      {/* ── Play/Pause ── */}
-      <button
-        type="button"
-        className={styles.playPauseBtn}
-        onClick={togglePlay}
-        aria-label={isPlaying ? "Pause video" : "Play video"}
-      >
-        {isPlaying ? (
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="currentColor" aria-hidden="true">
-            <rect x="1" y="0.5" width="3.5" height="12" rx="1" />
-            <rect x="8.5" y="0.5" width="3.5" height="12" rx="1" />
-          </svg>
-        ) : (
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="currentColor" aria-hidden="true">
-            <polygon points="1.5,0.5 12.5,6.5 1.5,12.5" />
-          </svg>
-        )}
-      </button>
+
     </section>
   );
 }
