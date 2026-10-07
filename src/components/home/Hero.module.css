@@ -16,18 +16,16 @@
   background: #0a0a0a;
 }
 
-/* Horizontal Track */
+/* Horizontal Track — single canvas slide, no translation needed */
 .track {
   display: flex;
   height: 100%;
-  width: 300%;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: transform;
+  width: 100%;
 }
 
 .slide {
   position: relative;
-  width: 33.333333%;
+  width: 100%;
   height: 100%;
   flex-shrink: 0;
   overflow: hidden;
@@ -107,6 +105,35 @@
 .cta:hover {
   background: #ffffff;
   color: #0a0a0a;
+}
+
+/* ─── Play / Pause Button ───────────────────────────── */
+.playPauseBtn {
+  position: absolute;
+  bottom: 28px;
+  right: 24px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.playPauseBtn:hover {
+  background: #ffffff;
+  color: #0a0a0a;
+  border-color: #ffffff;
 }
 
 /* ─── Navigation Arrows ──────────────────────────────── */
@@ -212,6 +239,10 @@
   }
 
   .desktopPagination {
+    display: none;
+  }
+
+  .playPauseBtn {
     display: none;
   }
 
